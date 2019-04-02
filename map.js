@@ -75,7 +75,8 @@ function zoomToNode(e) {
 
 function highlightNode(e) {
   var node = e.target;
-  $(".node-info").html('<b>NODE: ' + node.feature.properties.id + '</b>');
+  //$(".node-info").html('<b>NODE: ' + node.feature.properties.id + '</b>');
+  $(".node-info").html(geojsonProperties(node));
 }
 
 function resetNodeHighlight(e) {
@@ -120,9 +121,25 @@ function zoomToArc(e) {
 function highlightArc(e) {
   var arc = e.target;
   arc.bringToFront();
-  $(".arc-info").html('<b>Arc: ' + arc.feature.properties.id + '</b>');
+  //$(".arc-info").html('<b>Arc: ' + arc.feature.properties.id + '</b>');
+  $(".arc-info").html(geojsonProperties(arc));
 }
 
 function resetArcHighlight(e) {
   $(".arc-info").html("");
+}
+
+/*****************
+ Helper Functions
+******************/
+
+geojsonProperties = function(geojsonElement){
+
+  var tableHtml = '<table class="property-table"><tr><th>Property</th><th>Value</th></tr>';
+  $.each(geojsonElement.feature.properties, function(key,val){
+    tableHtml += '<tr><td>'+key+'</td>';
+    tableHtml += '<td>'+val+'</td></td></tr>';
+    })
+ tableHtml += '</table>';
+ return tableHtml;
 }
