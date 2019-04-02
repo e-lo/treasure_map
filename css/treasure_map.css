@@ -1,0 +1,233 @@
+html, body, #map {
+  width: 90%;
+  height: 100%;
+  margin: 0;
+  background: #fff;
+}
+
+.legend {
+  line-height: 16px;
+  font-family: 'Titillium Web',sans-serif;
+  width: 140px;
+  color: #333333;
+  padding: 6px 8px;
+  background: white;
+  background: rgba(255,255,255,0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.legend i {
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.9;
+}
+
+.legend img {
+  width: 16px;
+  height: 16px;
+  margin-right: 3px;
+  float: left;
+}
+
+.legend p {
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0;
+}
+
+/*
+INFO PANE
+*/
+.sidebar{
+  z-index: 1000;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 6px 8px;
+  font: 14px 'Titillium Web',sans-serif;
+  text-align: right;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  min-width: 200px;
+}
+
+.sidebar h1 {
+  font-size: 16px;
+  margin: 0 0 5px;
+  color: #777777;
+}
+
+
+/* The slider */
+
+
+.switchboard ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.switchboard li {
+  position: relative;
+  width: 60px;
+  height: 34px;
+  margin-bottom: 3px;
+}
+
+.switchboard input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switchboard .switch-label {
+  margin-left: 5px;
+  color: #ccc;
+  position: absolute;
+  bottom: 6px;
+  font-size: 16px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+
+input:checked + .slider {
+  background-color: #484a47;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1.5px #ECD078;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* ARCS */
+
+.bike-arc {
+  stroke: #fde74c;
+  stroke-width: 2px;
+  stroke-dasharray: 20,4,8,4;
+  opacity: 0.8;
+}
+
+.bike-arc:hover {
+  stroke: white;
+}
+
+.walk-arc {
+  stroke: #587b7f;
+  stroke-width: 2px;
+  stroke-dasharray: 10,10;
+  opacity: 0.8;
+}
+
+.walk-arc:hover {
+  stroke: white;
+}
+
+.drive-arc {
+  stroke: #f9a03f;
+  stroke-width: 2px;
+  opacity: 0.8;
+}
+
+.drive-arc:hover {
+  stroke: white;
+}
+
+/* MARKERS */
+
+.node-marker {
+  background-color: #F2CC8F; /*straw*/
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  border: 1px solid white;
+  opacity: 0.85
+}
+
+.node-marker:hover {
+  background-color: white;
+  border-color: #F2CC8F;
+}
+
+.bike-marker {
+  background-color: #fde74c; /*green apple*/
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  border: 1px solid white;
+  opacity: 0.85
+}
+
+.bike-marker:hover {
+  background-color: white;
+  border-color: #fde74c;
+}
+
+.walk-marker {
+  background-color: #587b7f; /*blue*/
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  border: 1px solid white;
+  opacity: 0.85
+}
+
+.walk-marker:hover {
+  background-color: white;
+  border-color: #587b7f;
+}
+
+.drive-marker {
+  background-color: #f9a03f;  /*cantaloupe*/
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  border: 1px solid white;
+  opacity: 0.85
+}
+
+.drive-marker:hover {
+  background-color: white;
+  border-color: #f9a03f;
+}
